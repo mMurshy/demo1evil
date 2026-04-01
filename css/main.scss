@@ -25,16 +25,7 @@ html {
   box-sizing: inherit;
 }
 
-/* Your styles go below */
-/* Default styles apply to screens less than 600px wide */
-body {
-  background-color: var(--primary-color-dark);
-  background-image: url("../img/leafbackground.png");
-  background-size: 1000px 1000px;
-  background-repeat: repeat;
-  color: var(--primary-color-light);
-  font-family: 'Comic Neue', sans-serif;
-  margin: 0;
+/* Yo
 }
 
 h1, h2, h3 {
@@ -110,7 +101,7 @@ section {
   li { 
 
     a {
-      background-color: var(--primary-color-dark);
+      background-color: var(--transparency);
       color: var(--off-white);
       display: block;
       size: 20px;
