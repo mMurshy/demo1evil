@@ -1,17 +1,17 @@
 /* Custom fonts and other imports go first */
-@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Creepster&display=swap");
+@import url('<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Creepster&family=Macondo&display=swap" rel="stylesheet">');
 /* CSS variables */
 :root {
   --text-color1: rgb(38, 25, 12);
-  --white: rgb(0, 255, 76);
-  --off-white: rgb(0, 255, 128);
+  --white: rgb(6, 60, 22);
+  --brown-text: rgb(38, 26, 22);
   --primary-color: rgb(49, 67, 39);
-  --primary-color-light: rgb(0, 218, 149);
+  --brown-text: rgb(52, 30, 21);
   --primary-color-bright: rgb(0, 163, 24);
   --primary-color-dark: rgb(0, 40, 20);
   --transparency:
   --contrast-color: rgb(177, 115, 0);
-  --headline-color: var(--primary-color-light): ;
+  --headline-color: var(--brown-text): ;
 }
 
 /* Box Model Reset: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
@@ -28,10 +28,10 @@ html {
 body {
   background-color: var(--primary-color-dark);
   background-image: url("../img/leafbackground.png");
-  background-size: 1000px 1000px;
+  background-size: 800px 800px;
   background-repeat: repeat;
-  color: var(--primary-color-light);
-  font-family: "Comic Neue", sans-serif;
+  color: var(--brown-text);
+  font-family: "Comic Neue", cursive;
   margin: 0;
 }
 
@@ -46,7 +46,7 @@ a {
 }
 
 a:hover {
-  background-color: var(--primary-color-light);
+  background-color: var(--brown-text);
 }
 
 /* applies to all <section> elements*/
@@ -72,7 +72,16 @@ section {
   max-width: 1200px;
 }
 .header h1 {
-  font-size: 75px;
+  line-height: 2px;
+  font-size: 125px;
+}
+.header h2 {
+  line-height: 2px;
+  font-size: 155px;
+}
+.header h3 {
+  line-height: 2px;
+  font-size: 125px;
 }
 
 .main-content {
@@ -82,9 +91,9 @@ section {
   background-size: 100px 100px;
   background-repeat: repeat;
   width: 96%;
-  max-width: 1440px;
+  max-width: 1440px, 4000px;
   margin: auto;
-  padding: 0;
+  padding: 900px;
 }
 .main-content .center {
   width: 100%;
@@ -98,14 +107,10 @@ section {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  list-style-type: none;
-  font-size: 20px;
-  padding: 0;
-  margin: 0;
 }
 .navigation li a {
-  background-color: var(--primary-color-dark);
-  color: var(--off-white);
+  background-color: var(--trans);
+  color: var(--brown-text);
   display: block;
   size: 20px;
   padding: 20px;
@@ -118,10 +123,10 @@ section {
 .navigation .tickets {
   background-image: url("../img/scrollimage.webp");
   background-color: transparent;
-  background-size: 584px, 372px;
+  background-size: 400px;
   color: var(--text-color1);
-  padding: 150px;
-  margin: -10px 0;
+  padding: 170px;
+  margin: 0px 0;
 }
 
 /* Styles for screens above or equal to 600px wide *//*# sourceMappingURL=main.css.map */
