@@ -1,15 +1,17 @@
 /* Custom fonts and other imports go first */
-@import url("https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap");
+@import url('<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Creepster&family=Macondo&display=swap" rel="stylesheet">');
 /* CSS variables */
 :root {
-  --black: rgb(0, 255, 38);
-  --white: rgb(0, 255, 76);
-  --off-white: rgb(0, 255, 128);
-  --primary-color: rgb(53, 110, 77);
-  --primary-color-light: rgb(0, 218, 149);
+  --text-color1: rgb(38, 25, 12);
+  --white: rgb(6, 60, 22);
+  --brown-text: rgb(38, 26, 22);
+  --primary-color: rgb(49, 67, 39);
+  --brown-text: rgb(52, 30, 21);
   --primary-color-bright: rgb(0, 163, 24);
-  --primary-color-dark: rgb(0, 184, 108);
-  --headline-color: var(--primary-color): ;
+  --primary-color-dark: rgb(0, 40, 20);
+  --transparency:
+  --contrast-color: rgb(177, 115, 0);
+  --headline-color: var(--brown-text): ;
 }
 
 /* Box Model Reset: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
@@ -24,9 +26,13 @@ html {
 /* Your styles go below */
 /* Default styles apply to screens less than 600px wide */
 body {
-  background-color: var(--off-white);
-  color: var(--primary-color-dark);
-  font-family: "Uncial Antiqua", sans-serif;
+  background-color: var(--primary-color-dark);
+  background-image: url("../img/leafbackground.png");
+  background-size: 800px 800px;
+  background-repeat: repeat;
+  color: var(--brown-text);
+  font-family: "Comic Neue", cursive;
+  margin: 0;
 }
 
 h1, h2, h3 {
@@ -40,14 +46,13 @@ a {
 }
 
 a:hover {
-  background-color: var(--primary-color-light);
+  background-color: var(--brown-text);
 }
 
 /* applies to all <section> elements*/
 section {
   padding-top: 40px;
   padding-bottom: 40px;
-  color: rgb(255, 255, 255);
 }
 
 /*applies to anything with class="center */
@@ -67,46 +72,61 @@ section {
   max-width: 1200px;
 }
 .header h1 {
-  color: #FFF;
-  font-size: 75px;
+  line-height: 2px;
+  font-size: 125px;
+}
+.header h2 {
+  line-height: 2px;
+  font-size: 155px;
+}
+.header h3 {
+  line-height: 2px;
+  font-size: 125px;
 }
 
-.intro {
-  background-color: rgb(255, 255, 255);
-  background-image: url("../img/IntroLeaves.png");
-  background-size: cover;
+.main-content {
+  /* this is where you'll put your knives background image */
+  background-color: var(--primary-color);
+  background-image: url("../img/swordpattern.png");
+  background-size: 100px 100px;
+  background-repeat: repeat;
+  width: 96%;
+  max-width: 1440px, 4000px;
+  margin: auto;
+  padding: 900px;
+}
+.main-content .center {
+  width: 100%;
+}
+.main-content .content {
+  padding: 0;
 }
 
-/* Styles for screens above or equal to 600px wide */
-@media (width >= 600px) {
-  body {
-    background-color: var(--primary-color);
-    color: var(--off-white);
-  }
-  .navigation {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    list-style-type: none;
-    font-size: 20px;
-    padding: 0;
-  }
-  .navigation li a {
-    background-color: transparent;
-    color: rgb(226, 226, 226);
-    display: block;
-    size: 20px;
-    padding: 20px;
-    text-align: center;
-  }
-  .navigation li a:hover, .navigation li a:focus {
-    background-color: rgb(255, 255, 255);
-    color: rgb(255, 255, 255);
-  }
-  .navigation li + li {
-    border: solid 2px 255;
-  }
-  h1, h2, h3 {
-    color: var(--white);
-  }
-}/*# sourceMappingURL=main.css.map */
+.navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.navigation li a {
+  background-color: var(--trans);
+  color: var(--brown-text);
+  display: block;
+  size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+.navigation li a:hover, .navigation li a:focus {
+  background-color: var(--black);
+  color: var(--contrast-color);
+}
+.navigation .tickets {
+  background-image: url("../img/scrollimage.webp");
+  background-color: transparent;
+  background-size: 400px;
+  color: var(--text-color1);
+  padding: 170px;
+  margin: 0px 0;
+}
+
+/* Styles for screens above or equal to 600px wide *//*# sourceMappingURL=main.css.map */
