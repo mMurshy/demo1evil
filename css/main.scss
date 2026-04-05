@@ -1,14 +1,13 @@
 /* Custom fonts and other imports go first */
-@import url('<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Creepster&family=Macondo&display=swap" rel="stylesheet">');
+@import url('<link href="https://fonts.googleapis.com/css2?family=Metamorphous&display=swap" rel="stylesheet">');
 
 /* CSS variables */
 :root {
-  --text-color1: rgb(38, 25, 12);
+  --text-color1: #979461;
   --white: rgb(6, 60, 22);
-  --brown-text: rgb(38, 26, 22);
   --primary-color: rgb(49, 67, 39);
-  --brown-text: rgb(52, 30, 21);
-  --primary-color-bright: rgb(0, 163, 24);
+  --brown-text: #26190c;
+  --primary-color-bright: #979461;
   --primary-color-dark: rgb(0, 40, 20);
   --transparency:
 
@@ -29,12 +28,16 @@ html {
 /* Default styles apply to screens less than 600px wide */
 body {
   background-color: var(--primary-color-dark);
-  background-image: url("../img/leafbackground.png");
+  background-image: url("../img/leafbackground2.png");
   background-size: 800px 800px;
   background-repeat: repeat;
-  color: var(--brown-text);
-  font-family: 'Comic Neue', cursive;
+
+ .metamorphous-regular {
+  font-family: "Metamorphous", serif;
+  font-weight: 400;
+  font-style: normal;
   margin: 0;
+}
 }
 
 h1, h2, h3 {
@@ -43,11 +46,10 @@ h1, h2, h3 {
 
 a {
   color: inherit;
-  text-decoration: fade-in($color: #000000, $amount: 0);
 }
 
 a:hover {
-  background-color: var(--brown-text);
+  background-color: var(--primary-color);
 }
 /* applies to all <section> elements*/
 section {
@@ -60,6 +62,7 @@ section {
   width: 90%;
   max-width: 900px;
   margin: 0 auto;
+  color: var(--text-color1);
 }
 
 .header {
@@ -67,45 +70,69 @@ section {
   background-image: url("../img/Headertest.jpg");
   background-size: cover;
   text-align: center;
+  
 
   .center {
     max-width: 1200px;
   }
 
   h1 {
-      line-height: 2px;
+      line-height: 120px;
     font-size: 125px;
+    margin-top: 80px;
+     color: var(--brown-text);
+    background-color: var(--primary-color-bright);
+    height: 120px;
   }
    h2 {
-    line-height: 2px;
+    line-height: 120px;
     font-size: 155px;
+     color: var(--brown-text);
+   background-color: var(--primary-color-bright);
+   color: var(--brown-text);
+     height: 250px;
+     margin-top: -100px;
   }
    h3 {
-      line-height: 2px;
-    font-size: 125px;
+     color: var(--brown-text);
+   line-height: 120px;
+    font-size: 155px;
+     margin-top: -250px;
+
   }
 }
 
 
 .main-content {
   /* this is where you'll put your knives background image */
+
   background-color: var(--primary-color);
-  background-image: url("../img/swordpattern.png");
-  background-size: 100px 100px;
+  background-image: url("../img/swordpattern2.png");
+  background-size: 150px 150px;
   background-repeat: repeat;
-  width: 96%;
+  width: 90%;
+  height: 2500px;
   max-width: 1440px, 4000px;
   margin: auto;
-  padding: 900px;
+  margin-top: -500px;
+
 
   .center {
+         background-repeat: no-repeat;
+         background-size: 100px, 100px;
+        padding-right: 500px;
+        margin: 500px;
+         list-style-type: none;
+
+
+
     width: 100%;
   }
+}
 
   .content {
     padding: 0;
   }
-}
 
 .navigation {
   display: flex;
@@ -118,32 +145,50 @@ section {
 
     a {
       background-color: var(--trans);
-      color: var(--brown-text);
+      color: var(--text-color1);
       display: block;
-      size: 20px;
+      size: 50px;
       padding: 20px;
+  
       
       text-align: center;
 
       &:hover,
       &:focus {
         background-color: var(--black);
-        color: var(--contrast-color);
+        color: var(--brown-text);
       }
     }
   }
 
   .tickets {
     background-image: url("../img/scrollimage.webp");
+    background-size: contain;
+    background-repeat:no-repeat;
     background-color: transparent;
-    background-size: 400px;
-    color: var(--text-color1);
-    padding: 170px;
-    margin: 0px 0;
+    font-size: 100px;
+    text-align: center;
+    color: var(--brown-text);
+    padding: 200px;
+
     
   }
 }
 
+.footer {
+  font-size: 100px;
+  list-style-type: none;
+  text-align: center;
+  text-decoration: underline;
+  display: flex;
+   gap: 20px;
+}
+
+.mascot {
+ margin-left: -650px;
+ margin-top: -2600px;
+ pointer-events: none;
+}
 
 /* Styles for screens above or equal to 600px wide */
 @media (width >= 600px) {
