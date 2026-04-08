@@ -15,17 +15,20 @@
     <section class="header">
       <div class="center">
         <div class="content">
-          <h1>MARYLAND</h1>
-          <h2>RENAISSANCE</h2>
-          <h3>FESTIVAL</h3>
-<<<<<<< Updated upstream
+          <!-- @Jack - changed the main title to use a single h1 element -->
+          <!-- and forced the text wrapping using some line break tags <br /> -->
+          <h1>MARYLAND<br />
+          RENAISSANCE<br />
+          FESTIVAL</h1>
 
-             <div class="content">
-
+          <!-- @Jack - Removed duplicate <div class="content"> tag -->
           <ul class="navigation">
             <li><a href="#">←Previous Events</a></li>
             <li><a class="tickets" href="#" style="size: 50px;">Buy Tickets</a></li>
             <li><a href="#">Upcoming Events→</a></li>
+          </ul> <!-- @Jack - Added missing closing </ul> tag -->
+
+          
 
         </div>
       </div>
@@ -33,78 +36,62 @@
 
     <section class="main-content">
 
+              <li><img class="paper" src="../demo1evil/img/paperbutton1.png" style="width:800px;height:300px;"></li>
+         <li><img class="paper" src="../demo1evil/img/paperbutton2.png" style="width:800px;height:300px;"></li>
+           <li><img class="paper" src="../demo1evil/img/paperbutton3.png" style="width:800px;height:300px;"></li>
+             <li><img class="paper" src="../demo1evil/img/paperbutton4.png" style="width:800px;height:300px;"></li>
       
+      <!-- @Jack - Moved your mascot image outside of your content div so that we can absolutely position 
+           it based on the entire section, but also to keep it below the paper buttons visually.
+           Also cropped out the additional transparency to save file-size but also make it easier to position. 
+           Also also removed the inline styles setting the width and height so that I can handle those in your 
+           main.css with the rest of the styles being applied to it. Added benefit of this last point is that it
+           removes the horizonal scroll that was happening on the page. -->
+      <div class="mascot"><img src="../demo1evil/img/renmascot-cropped.png"/></div>
+
+
+
+
       <div class="center">
 
         <div class="content">
 
-          
-     <li><img src="../demo1evil/img/paperbutton.webp" style="width:800px;height:300px;"></li>
-         <li><img src="../demo1evil/img/paperbutton.webp" style="width:800px;height:300px;"></li>
-           <li><img src="../demo1evil/img/paperbutton.webp" style="width:800px;height:300px;"></li>
-             <li><img src="../demo1evil/img/paperbutton.webp" style="width:800px;height:300px;"></li>
-              <img class="mascot" src="../demo1evil/img/renmascot.png" style="width:2900px;height:4200px;"/>
 
-  
+
           </ul>
 
-          
+
         </div>
       </div>      
     </section>
 
 
               </section>
-=======
-        </div>
-      </div>
-    </section>
-
-    <section class="main-content">
-      <div class="center">
-        <div class="content">
-
-          <ul class="navigation">
-            <li><a href="#">←Previous Events</a></li>
-            <li><a class="tickets" href="#">Buy Tickets</a></li>
-            <li><a href="#">Upcoming Events→</a></li>
-          </ul>
-
-          <text2>My Ice cream is ready!.</text2>
-          <p> Thats great cause I'm so <a href="https://en.wikipedia.org/wiki/Hunger">hungry.</a>Would anyone like a bite?</p>
->>>>>>> Stashed changes
 
 
         </div>
       </div>      
     </section>
-
 
 
 
     <section class="footer">
       <div class="center">
         <div class="content">
-          <p> </p>
+          <p style="font-size: 40px">1821 Crownsville Road. Annapolis MD, 21401 </p>
 
           <ul>
             <li><a href="#">Contact</a></li>
-<<<<<<< Updated upstream
             <li><a href="#">FAQ</a></li>
             <li><a href="#">Directions</a></li>
                <li><a href="#">Special Events</a></li>
-=======
-            <li><a href="#">Parking</a></li>
-            <li><a href="#">Rules</a></li>
->>>>>>> Stashed changes
           </ul>
 
         </div>
-      </div>      
-
+      </div>
+    </section>
 
 
     <!-- All JS goes at the end of the <body> element -->
     <script src="js/main.js"></script>
   </body>
-</html>

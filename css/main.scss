@@ -1,5 +1,4 @@
 /* Custom fonts and other imports go first */
-<<<<<<< Updated upstream
 @import url('<link href="https://fonts.googleapis.com/css2?family=Metamorphous&display=swap" rel="stylesheet">');
 
 /* CSS variables */
@@ -8,19 +7,7 @@
   --white: rgb(6, 60, 22);
   --primary-color: rgb(49, 67, 39);
   --brown-text: #26190c;
-  --primary-color-bright: #979461;
-=======
-@import url('<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Creepster&family=Macondo&display=swap" rel="stylesheet">');
-
-/* CSS variables */
-:root {
-  --text-color1: rgb(38, 25, 12);
-  --white: rgb(6, 60, 22);
-  --brown-text: rgb(38, 26, 22);
-  --primary-color: rgb(49, 67, 39);
-  --brown-text: rgb(52, 30, 21);
-  --primary-color-bright: rgb(0, 163, 24);
->>>>>>> Stashed changes
+  --primary-color-bright: #aa951d;
   --primary-color-dark: rgb(0, 40, 20);
   --transparency:
 
@@ -41,7 +28,6 @@ html {
 /* Default styles apply to screens less than 600px wide */
 body {
   background-color: var(--primary-color-dark);
-<<<<<<< Updated upstream
   background-image: url("../img/leafbackground2.png");
   background-size: 800px 800px;
   background-repeat: repeat;
@@ -52,14 +38,6 @@ body {
   font-style: normal;
   margin: 0;
 }
-=======
-  background-image: url("../img/leafbackground.png");
-  background-size: 800px 800px;
-  background-repeat: repeat;
-  color: var(--brown-text);
-  font-family: 'Comic Neue', cursive;
-  margin: 0;
->>>>>>> Stashed changes
 }
 
 h1, h2, h3 {
@@ -71,11 +49,7 @@ a {
 }
 
 a:hover {
-<<<<<<< Updated upstream
   background-color: var(--primary-color);
-=======
-  background-color: var(--brown-text);
->>>>>>> Stashed changes
 }
 /* applies to all <section> elements*/
 section {
@@ -96,37 +70,39 @@ section {
   background-image: url("../img/Headertest.jpg");
   background-size: cover;
   text-align: center;
-  
+
+  // @Jack - Added some positioning and z-index to force the header to stack above the other
+  // content on the page, that way the nav links aren't below the image.
+  // Default position value is static.
+  position: relative;
+  // Default z-index value is 0. If multiple HTML siblings have the same z-index value but visually
+  // overlap each other (e.g. because of negative margin) then the subsequent HTML elements will 
+  // display on top of the previous HTML elements. By settign the z-index to a value higher than 0
+  // we can change which element displays on top. 
+  z-index: 100;
+
 
   .center {
-    max-width: 1200px;
+    max-width: 1600px; // @Jack - Updated this value to match the max-width of .main-content
   }
 
   h1 {
-<<<<<<< Updated upstream
-      line-height: 120px;
+    line-height: 0.725em; // @Jack - Changed the line height to tighen up the now wrapping text
     font-size: 125px;
     margin-top: 80px;
-     color: var(--brown-text);
-    background-color: var(--primary-color-bright);
-    height: 120px;
+    color: var(--brown-text);
+    background-color: var(--text-color1);
+    // @Jack - Removed the height value set here and replaced it with some padding to match the
+    // originally defined 120px height
+    padding: 20px;
+    background-image: url(../img/RenLogo.png);
+    background-repeat: no-repeat;
+    background-position: 40px;
+    background-size: 240px;
   }
-   h2 {
-    line-height: 120px;
-    font-size: 155px;
-     color: var(--brown-text);
-   background-color: var(--primary-color-bright);
-   color: var(--brown-text);
-     height: 250px;
-     margin-top: -100px;
-  }
-   h3 {
-     color: var(--brown-text);
-   line-height: 120px;
-    font-size: 155px;
-     margin-top: -250px;
 
-  }
+  // @Jack - Removed styles for header h2 and h3 since that text is now 
+  // consolidated into a single h1 element
 }
 
 
@@ -137,11 +113,16 @@ section {
   background-image: url("../img/swordpattern2.png");
   background-size: 150px 150px;
   background-repeat: repeat;
-  width: 90%;
-  height: 2500px;
+  height: 1800px;
   max-width: 1440px, 4000px;
   margin: auto;
-  margin-top: -500px;
+  margin-top: -200px;
+
+  .paper {
+        
+        margin-left: 1800px;
+        margin-top: 100px;
+  }
 
 
   .center {
@@ -150,12 +131,31 @@ section {
         padding-right: 500px;
         margin: 500px;
          list-style-type: none;
+    
+         }
+  
+  .mascot {
+    // @Jack - I see what you were doing here, but it relies on the screen and the rest of the content
+    // being exactly the right size in order to work. Alternative solution below. 
+    // margin-left: -650px;
+    // margin-top: -2600px;
+     // This is a clever solution for the overlapping issue, very nice.
+    img {
+      margin-top: -1700px;
+      max-width: 2600%;
+      margin-right: 2000px;
+      padding-left: 200px;
+      
+
+      
+      }
+    }
 
 
 
     width: 100%;
   }
-}
+
 
   .content {
     padding: 0;
@@ -166,24 +166,35 @@ section {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  
 
-  li { 
+  // @Jack - Removes default list styles like the bullet points
+  list-style: none;
+  padding-left: 0;
+
+
+  li {
+
+    // @Jack - This targets the list item that has a child element with a class of "tickets."
+    // It's a way to style a parent element based on a child, and the flex-basis of 40% 
+    // means this list item will target a width of 40% but still do all the fancy CSS flexbox stuff.
+    &:has(.tickets) {
+      flex-basis: 40%;
+    }
 
     a {
       background-color: var(--trans);
       color: var(--text-color1);
       display: block;
-      size: 50px;
-      padding: 20px;
-  
-      
+      font-size: 60px; // @Jack - The correct property is 'font-size' to set the size of the text
+      padding: 10px;
+
+
       text-align: center;
 
       &:hover,
       &:focus {
         background-color: var(--black);
-        color: var(--brown-text);
+        color: var(--primary-color-bright);
       }
     }
   }
@@ -196,102 +207,42 @@ section {
     font-size: 100px;
     text-align: center;
     color: var(--brown-text);
-    padding: 200px;
+    // padding: 200px;
 
-    
+    // @Jack - This sizes the middle item to be the same proportions as the
+    // background scroll image, since that's what you're trying to align the
+    // ticket typography in.
+    aspect-ratio: 584/372;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20% 10%;
   }
 }
 
+.content {
+
+font-size: 40;
+}
+
+// @Jack - You had most of the right styles here, but not targeting the right elements.
+// Most of the styles needed to target the <ul> in .footer, not .footer directly.
 .footer {
-  font-size: 100px;
-  list-style-type: none;
   text-align: center;
-  text-decoration: underline;
-  display: flex;
-   gap: 20px;
-}
 
-.mascot {
- margin-left: -650px;
- margin-top: -2600px;
- pointer-events: none;
-}
-=======
-      line-height: 2px;
-    font-size: 125px;
+  ul {
+    display: flex;
+    gap: 20px;  
+    justify-content: center;
+    font-size: 50px; // @Jack - Brought the font-size down to make it all fit on one line. 
+    list-style-type: none;
+    padding-left: 0;
   }
-   h2 {
-    line-height: 2px;
-    font-size: 155px;
-  }
-   h3 {
-      line-height: 2px;
-    font-size: 125px;
+
+  a {
+    text-decoration: underline;
   }
 }
-
->>>>>>> Stashed changes
-
-.main-content {
-  /* this is where you'll put your knives background image */
-  background-color: var(--primary-color);
-  background-image: url("../img/swordpattern.png");
-  background-size: 100px 100px;
-  background-repeat: repeat;
-  width: 96%;
-  max-width: 1440px, 4000px;
-  margin: auto;
-  padding: 900px;
-
-<<<<<<< Updated upstream
-=======
-  .center {
-    width: 100%;
-  }
-
-  .content {
-    padding: 0;
-  }
-}
-
-.navigation {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  
-
-  li { 
-
-    a {
-      background-color: var(--trans);
-      color: var(--brown-text);
-      display: block;
-      size: 20px;
-      padding: 20px;
-      
-      text-align: center;
-
-      &:hover,
-      &:focus {
-        background-color: var(--black);
-        color: var(--contrast-color);
-      }
-    }
-  }
-
-  .tickets {
-    background-image: url("../img/scrollimage.webp");
-    background-color: transparent;
-    background-size: 400px;
-    color: var(--text-color1);
-    padding: 170px;
-    margin: 0px 0;
-    
-  }
->>>>>>> Stashed changes
-}
-
 
 /* Styles for screens above or equal to 600px wide */
 @media (width >= 600px) {
