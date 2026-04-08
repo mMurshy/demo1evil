@@ -1,4 +1,5 @@
 /* Custom fonts and other imports go first */
+<<<<<<< Updated upstream
 @import url('<link href="https://fonts.googleapis.com/css2?family=Metamorphous&display=swap" rel="stylesheet">');
 
 /* CSS variables */
@@ -8,6 +9,18 @@
   --primary-color: rgb(49, 67, 39);
   --brown-text: #26190c;
   --primary-color-bright: #979461;
+=======
+@import url('<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Creepster&family=Macondo&display=swap" rel="stylesheet">');
+
+/* CSS variables */
+:root {
+  --text-color1: rgb(38, 25, 12);
+  --white: rgb(6, 60, 22);
+  --brown-text: rgb(38, 26, 22);
+  --primary-color: rgb(49, 67, 39);
+  --brown-text: rgb(52, 30, 21);
+  --primary-color-bright: rgb(0, 163, 24);
+>>>>>>> Stashed changes
   --primary-color-dark: rgb(0, 40, 20);
   --transparency:
 
@@ -28,6 +41,7 @@ html {
 /* Default styles apply to screens less than 600px wide */
 body {
   background-color: var(--primary-color-dark);
+<<<<<<< Updated upstream
   background-image: url("../img/leafbackground2.png");
   background-size: 800px 800px;
   background-repeat: repeat;
@@ -38,6 +52,14 @@ body {
   font-style: normal;
   margin: 0;
 }
+=======
+  background-image: url("../img/leafbackground.png");
+  background-size: 800px 800px;
+  background-repeat: repeat;
+  color: var(--brown-text);
+  font-family: 'Comic Neue', cursive;
+  margin: 0;
+>>>>>>> Stashed changes
 }
 
 h1, h2, h3 {
@@ -49,7 +71,11 @@ a {
 }
 
 a:hover {
+<<<<<<< Updated upstream
   background-color: var(--primary-color);
+=======
+  background-color: var(--brown-text);
+>>>>>>> Stashed changes
 }
 /* applies to all <section> elements*/
 section {
@@ -77,6 +103,7 @@ section {
   }
 
   h1 {
+<<<<<<< Updated upstream
       line-height: 120px;
     font-size: 125px;
     margin-top: 80px;
@@ -189,6 +216,82 @@ section {
  margin-top: -2600px;
  pointer-events: none;
 }
+=======
+      line-height: 2px;
+    font-size: 125px;
+  }
+   h2 {
+    line-height: 2px;
+    font-size: 155px;
+  }
+   h3 {
+      line-height: 2px;
+    font-size: 125px;
+  }
+}
+
+>>>>>>> Stashed changes
+
+.main-content {
+  /* this is where you'll put your knives background image */
+  background-color: var(--primary-color);
+  background-image: url("../img/swordpattern.png");
+  background-size: 100px 100px;
+  background-repeat: repeat;
+  width: 96%;
+  max-width: 1440px, 4000px;
+  margin: auto;
+  padding: 900px;
+
+<<<<<<< Updated upstream
+=======
+  .center {
+    width: 100%;
+  }
+
+  .content {
+    padding: 0;
+  }
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  
+
+  li { 
+
+    a {
+      background-color: var(--trans);
+      color: var(--brown-text);
+      display: block;
+      size: 20px;
+      padding: 20px;
+      
+      text-align: center;
+
+      &:hover,
+      &:focus {
+        background-color: var(--black);
+        color: var(--contrast-color);
+      }
+    }
+  }
+
+  .tickets {
+    background-image: url("../img/scrollimage.webp");
+    background-color: transparent;
+    background-size: 400px;
+    color: var(--text-color1);
+    padding: 170px;
+    margin: 0px 0;
+    
+  }
+>>>>>>> Stashed changes
+}
+
 
 /* Styles for screens above or equal to 600px wide */
 @media (width >= 600px) {
